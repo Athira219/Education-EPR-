@@ -1,0 +1,32 @@
+<div>
+    <div class="d-flex justify-content-center align-items-center shadow p-5 container mt-5 rounded flex-column "
+        style="background-color: whitesmoke;">
+        <!-- <div class="border"> -->
+        <a class="d-flex justify-content-center align-items-center " style="color: teal;text-decoration: none;font-size: 1.5rem;font-weight:500;">LOGIN PAGE</a>
+        <div class="row  w-100">
+            <div class="col-sm-12 col-md-6 col-lg-6 ">
+                <img class="w-100" src="https://aws.vedmarg.com/wp-content/uploads/2022/09/ved-blog-1.png" alt="">
+
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 " style="margin-top: 5rem;">
+                <form  #loginForm = "ngForm" (ngSubmit)="login()">
+                <input type="email" [(ngModel)]="email" name="email" #stdemail="ngModel" email required
+                    class="form-control mt-2 w-100 p-2" placeholder="Email">
+                <span *ngIf="stdemail.invalid && stdemail.touched" class="text-danger">Invalid Email</span>
+                <input type="password" [(ngModel)]="password" name="password" #stdpwsd="ngModel" pattern="[a-zA-Z0-9]*" required
+                   minlength="4" class="form-control mt-2 w-100 p-2" placeholder="password">
+                <span *ngIf="stdpwsd.invalid && stdpwsd.touched" class="text-danger">Invalid Password</span>
+
+
+                <div>
+                    <button type="submit" [disabled]="loginForm.invalid" class="btn mt-2" style="background-color: teal; color: white;">Submit</button>
+                </div>
+            </form>
+
+            </div>
+
+        </div>
+        <!-- </div> -->
+
+    </div>
+</div>
